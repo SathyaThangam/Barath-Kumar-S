@@ -410,9 +410,6 @@
         border: 0;
         display: inline-block;
     }
-    h1 a{
-        font-weight: ;
-    }
     .article-content-meta {
         display: grid;
         grid-template-columns: 80px auto 1fr;
@@ -648,7 +645,161 @@
         clear: both;
         margin: 0 0 1rem;
         position: relative;
+    } 
+    .single-module .module img {
+        width: 300px;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 0 30px rgba(16,14,23,.25);
     }
+    .article-card {
+        margin: 0 0 8rem;
+        position: relative;
+        overflow: hidden;
+        
+    }
+    .icon-link {
+        width: 20px;
+        height: 12px;
+        fill: #fff;
+    }
+    .link-line {
+        border-top: 5px solid #201c29;
+        border-right: 5px solid #201c29;
+        border-top-right-radius: 2rem;
+        padding-right: 2rem;
+    }
+    .link-shared-by {
+        display: -webkit-box;
+        display: flex;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        background: #100e17;
+        -webkit-box-align: center;
+        align-items: center;
+        font-size: .8rem;
+        line-height: 1.2;
+        color: #7a7a8c;
+        padding-right: 1rem;
+        margin: -2.4rem 0 1rem;
+    }
+    .link-shared-by .author-avatar {
+        margin-right: 1rem;
+    }
+    .link-shared-by span {
+        color: #b1b1b1;
+    }
+    .link-shared-by:hover {
+        color: #fff;
+    }
+    .link-links {
+        font-weight: 700;
+        color: #7a7a8c;
+        margin: 0 0 1.5rem;
+    }
+    .link-read-more, .read-more {
+        background: linear-gradient(90deg,#ff8a00,#e52e71);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        font-weight: 700;
+        border-bottom: 1px solid #e52e71;
+        padding-bottom: .15rem;
+    }
+    .link-read-more:hover{
+        background: -webkit-gradient(linear,left top,right top,from(#fff),to(#eee));;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: 1px solid #fff;
+    }
+    .read-more:hover{
+        border-bottom: 1px solid #fff;
+    }
+    .link-read-more svg, .read-more svg {
+        margin: 0 0 0 .25rem;
+        position: relative;
+        top: .25rem;
+    }
+    .bsap-doubles.side-by-side .bsa_it {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -.5rem;
+    }
+    .bsap-doubles.side-by-side .bsa_it .bsa_it_ad {
+        background: #201c29;
+        border: 1px solid #312d3c;
+        box-shadow: 0 4px 80px #000;
+        min-width: 33%;
+        max-width: 100%;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        flex-basis: calc(559440px - 99900%);
+        display: -webkit-box;
+        display: flex;
+        margin: .5rem;
+        border-radius: 8px;
+    }
+    .bsa_it_ad {
+        padding: 1.3rem;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+    .bsa_it_ad:hover .bsa_it_d{
+        background: -webkit-gradient(linear,left top,right top,from(#fff),to(#eee));;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .bsap-doubles.side-by-side .bsa_it .bsa_it_ad>a:first-of-type {
+        -webkit-box-ordinal-group: 3;
+        order: 2;
+    }
+    .bsap-doubles.side-by-side .bsa_it .bsa_it_ad>a:nth-of-type(2) {
+        -webkit-box-flex: 1;
+        flex: 1;
+        padding-right: 1rem;
+    }
+    .bsa_it_t {
+        font-family: Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        display: block;
+        margin: 0 0 5px;
+    }
+    .bsa_it_d {
+        font-family: Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
+        color: #a1a1af;
+        display: block;
+        font-size: .85rem;
+    }
+    .button-full-width {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 0 .5rem;
+    }
+    .button, .comment-reply-link, .commentPreviewButton, input.submit {
+        background-image: -webkit-gradient(linear,right bottom,left top,from(#ff8a00),to(#e52e71));
+        background-image: linear-gradient(to top left,#ff8a00,#e52e71);
+        color: #fff!important;
+        display: inline-block;
+        font-family: inherit;
+        font-weight: 700;
+        border: 0;
+        border-radius: 2rem;
+        white-space: nowrap;
+        padding: 1rem 1.5rem;
+        line-height: 1.4;
+        text-align: center;
+        -webkit-transition: .07s;
+        transition: .07s;
+        position: relative;
+    }
+    
     @media (max-width: 1200px) {
         .mini-card {
             min-width: 220px;
