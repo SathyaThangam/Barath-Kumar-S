@@ -1,0 +1,395 @@
+.mx-site * {
+    background: transparent;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+.mx-site body {
+    font-size: 16px;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+}
+html {
+    color: -internal-root-color;
+}
+.mx-site ::selection {
+    background: rgba(11,173,197,.2);
+}
+.mx-site .y, .mx-site button, .mx-site textarea {
+    color: #465659;
+    font: normal 16px/1em Proxima,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.mx-site .y {
+    min-width: 320px;
+}
+.mx-site .gh {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: stretch;
+    justify-content: stretch;
+    min-height: 100vh;
+}   
+.mx-site .mh, .mx-site .lh {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-direction: normal;
+}
+.mx-site .lh {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+.mx-site .el {
+    background: #f5f5f5;
+    color: #0e2f47;
+    font-size: 13.92px;
+    text-align: center;
+}
+.mx-site .ll {
+    display: -webkit-box;
+    display: flex;
+    line-height: 32px;
+}
+.mx-site .S {
+    max-width: 1200px;
+}
+.mx-site .R {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.mx-site .el {
+    background: #f5f5f5;
+    color: #0e2f47;
+    font-size: 13.92px;
+    text-align: center;
+}
+.mx-site .fl {
+    -webkit-box-flex: 1;
+    flex: 1;
+    text-align: left;
+}
+.mx-site .hl {
+    font-weight: 700;
+    margin-right: 8px;
+}
+.mx-site .il {
+    margin-right: .8em;
+}
+strong {
+    font-weight: bold;
+}
+.mx-site .jl{
+    border: 1px solid;
+    border-radius: 4px;
+    color: #000000;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    height: 22px;
+    line-height: 22px;
+    margin-bottom: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 54px;
+}
+.mx-site .jl:hover{
+    color: #465659;
+}
+.il a{
+    color: #465659;
+}
+.il a:hover{
+    color: #3cadac;
+    text-decoration: none;
+}
+.mx-site .fg {
+    color: #3cadac;
+}
+.mx-site .fg:hover {
+    color: #465659;
+}
+.mx-site .eg {
+    cursor: pointer;
+    text-decoration: none;
+}
+.mx-site .ng {
+    font-weight: 700;
+}
+.mx-site .hg, .mx-site .fg.ig {
+    color: #0e2f47;
+}
+.mx-site .hg:hover, .mx-site .fg.ig:hover {
+    color: #3cadac;
+}
+.mx-site .Xl {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    height: 48px;
+    margin-top: -8px;
+}
+.mx-site .mh {
+    -webkit-box-align: center;
+    align-items: center;
+    align-self: center;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.mx-site .qh {
+    display: inline-block;
+    margin-top: 6px;
+}
+.mx-site .rh {
+    fill: #004475;
+    height: 58px;
+    pointer-events: none;
+    width: 143px;
+}
+.mx-site .oh {
+    display: none;
+    height: 100%;
+    width: 52px;
+}
+.mx-site .sh {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    place-items: flex-end;
+}
+.mx-site .Mk {
+    display: inline-block;
+    padding: 16px 17.6px;
+    position: relative;
+    z-index: 2;
+}
+.mx-site .Mk:not(:first-child) {
+    margin-left: -10px;
+}
+.mx-site .Mk:last-child {
+    padding-right: 0;
+}
+.mx-site .Lk {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    height: 48px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    line-height: 17.6px;
+}
+.mx-site .Zl .am:after {
+    content: "▾";
+    margin-left: 5px;
+}
+.mx-site .Yl {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+}
+.mx-site .hn {
+    position: relative;
+}
+.mx-site .Hi {
+    display: -webkit-box;
+    display: flex;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    position: relative;
+    z-index: 1;
+}
+.mx-site .jn {
+    position: relative;
+    z-index: 100;
+}
+.mx-site .am {
+    display: block;
+    font-weight: 700;
+    padding: 16px 17.6px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.mx-site .lg {
+    font-size: 14px;
+}
+.mx-site .Yl:not(:first-child) {
+    margin-left: -10px;
+}
+.mx-site .Sb {
+    padding-left: 8px;
+}
+.mx-site .ub {
+    padding-bottom: 8px;
+}
+.mx-site .hg.gg:hover {
+    color: #3cadac;
+}
+.mx-site .ya {
+    padding-top: 8px;
+}
+.mx-site .bm {
+    height: 20px;
+    width: 20px;
+}
+.mx-site .ef {
+    fill: currentColor;
+    pointer-events: none;
+    vertical-align: middle;
+}
+.ke {
+    background-image: url(https://media.mixbook.com/dead_simple_cms/main_page_scheduler/carousel/first_slide/url4-1576868813.jpg?1576868814);
+}
+.mx-site .i {
+    height: 568px;
+    position: relative;
+    width: 100%;
+}
+.mx-site .ke {
+    background-color: #d5dbde;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.mx-site .ka {
+    display: none;
+}
+.mx-site .j {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    width: 100%;
+    z-index: 1;
+}
+.mx-site .Hb {
+    margin-left: 8px;
+}
+.mx-site .La {
+    margin-right: 8px;
+}
+button {
+    -webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: buttonface;
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+.mx-site .id {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: .021em;
+    line-height: 1.3em;
+    outline: none;
+}
+.mx-site .yd {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #d5dbde;
+    border-radius: 20px;
+    color: #0e2f47;
+    padding: 1px;
+}
+.mx-site .yd[aria-pressed=true] {
+    border: 2px solid #3cadac;
+}
+.mx-site .yd .jd {
+    font-weight: 400;
+    padding: 4px 8px;
+}
+.mx-site .ld, .mx-site .md {
+    font-size: 16px;
+    font-weight: 600;
+}
+.mx-site .Ed {
+    text-transform: capitalize;
+}
+.mx-site .od {
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.mx-site .jd {
+    -webkit-box-align: center;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: flex;
+}
+.mx-site .Db {
+    padding-bottom: 80px;
+}
+.mx-site .Ha {
+    padding-top: 80px;
+}
+.mx-site .Xo{
+    background: url(http://cdn.mixbook.com/apps/site/public/mainPageHeaderBackground-0280227….webp) no-repeat;
+    -webkit-background-clip: text;
+    background-position: 50%;
+    -webkit-text-fill-color: transparent;
+}
+/* .Ke{
+    background-image:url(https://media.mixbook.com/dead_simple_cms/main_page_scheduler/carousel/first_slide/url1-1576868813.jpg?1576868813);
+} */
+@media (max-width: 1280px)
+{
+    .mx-site .R {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
