@@ -1,15 +1,4 @@
 $(document).ready(function () {
-  // $(function first(){
-  //   $(".ke").css('background-image','url(https://media.mixbook.com/dead_simple_cms/main_page_scheduler/carousel/first_slide/url1-1576868813.jpg?1576868813);');
-  // });
-  //   $(function second(){
-  //     $(".ke").css('background-image','url(https://media.mixbook.com/dead_simple_cms/main_page_scheduler/carousel/third_slide/url1-1576868815.jpg?1576868816)');
-  //   });
-
-  //   $(function third(){
-  //     $(".ke").css('background-image','url(https://media.mixbook.com/dead_simple_cms/main_page_scheduler/carousel/second_slide/url1-1576868814.jpg?1576868814)');
-  //   });
-  //   setTimeout(first,3000);
   var i = 0;
   setInterval(function () {
     if (i == 0) {
@@ -32,7 +21,6 @@ $(document).ready(function () {
         $(".ke").attr('title', 'happiness');
       })
     };
-
     if(i == 2){
       $(function () {
         $(".mx-site .yd").each(function () {
@@ -44,10 +32,7 @@ $(document).ready(function () {
       })
       
     };
-    // setInterval(function loop(){
-
     i = (i + 1) % 3;
-    // },3000);
   }, 6000);
   $(".mx-site .yd[title|='offer']").click(function () {
     $(".mx-site .yd").each(function () {
@@ -73,4 +58,14 @@ $(document).ready(function () {
     $(".ke").css('background-image', 'url(https://media.mixbook.com/dead_simple_cms/main_page_scheduler/carousel/third_slide/url4-1576868816.jpg?1576868816)');
     $(".ke").attr('title', 'happiness');
   })
+  $(".cyCKx").click(function(){
+    document.getElementById("list").classList.remove('fuUAUh');
+    document.getElementById("list").classList.add('KAAHWn');
+    
+  })
+  $(".UwRNw").click(function(){
+    document.getElementById("list").classList.remove('KAAHWn');
+    document.getElementById("list").classList.add('fuUAUh');
+  })
 });
+
