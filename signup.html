@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesign.css">
+    <script src="scriptsign.js"></script> 
+    <title>SignUp / Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signup">
+            <h1>Sign Up</h1>
+            <div>
+                Email : <input type="email" id="mail" placeholder="Email" value="">
+            </div>
+            <div>
+                Enter Password : <input type="password" id="pass" placeholder="Enter Password" value="">
+            </div>
+            <div>
+                Re-type Password : <input type="password" id="re-pass" placeholder="Re-enter Password" value="">
+            </div>
+            <div>
+                <button class="register" type="submit" onclick=store()>Register</button>  
+            </div>
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+            <div>
+                Email : <input type="email" id="logmail" placeholder="Email" value="">
+            </div>
+            <div>
+                Password : <input type="password" id="logpass" placeholder="Password" value="">
+            </div>
+            <div>
+                <button class="submit" type="submit" onclick=check()>Login</button>
+            </div>
+        </div>
+    </div>
+</body>
