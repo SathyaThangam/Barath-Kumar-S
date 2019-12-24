@@ -29,6 +29,102 @@ html {
 .mx-site .y {
     min-width: 320px;
 }
+.home,.photo,.cards{
+    animation-name: Rf;
+    transform-origin: bottom;
+    animation: .1s ease-out forwards;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    will-change: transform;
+    position: absolute;
+    z-index: 1;
+}
+.sizes{
+    background-color: #fff;
+    top: 100%;
+    left: 0;
+    max-width: 800px;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    width: auto;
+    min-width: 100%;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 48px 0 rgba(0,0,0,.16);
+    z-index: 1;
+    position: absolute;
+}
+.Gi{
+    white-space: nowrap;
+}
+.cc{
+    padding-bottom: 16px;
+}
+.Fb{
+    padding-right: 24px;
+}
+.Bc{
+    padding-left: 24px;
+}
+.rk:not(:last-child){
+    border-right: 1px solid #eaeaea;
+}
+.rk{
+    min-width: 154px;
+}
+.Vh{
+    line-height: 36px;
+    font-size: 15px;
+    font-weight: 300;
+}
+.Wh{
+    font-weight: 700;
+}
+.Se{
+    color:#0e2f47
+}
+.Se:hover{
+    color: #3cadac;
+}
+.Pe{
+    cursor: pointer;
+    text-decoration: none;
+}
+.gb{
+    display: flex;
+    padding-top: 16px;
+}
+.qk{
+    display: flex;
+}
+.fk{
+    min-width: 144px;
+}
+.Cc{
+    padding-left: 32px;
+}
+.Gb{
+    padding-right: 32px;
+}
+.padding{
+    white-space: nowrap;
+    padding-left: 24px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+.padding div a{
+    font-weight: 300;
+    line-height: 36px;
+    font-size: 15px;
+    color: #465659;
+}
+.padding div a:hover{
+    color: #3cadac;
+    cursor: pointer;
+}
 .mx-site .gh,.mx-site .da{
     -webkit-box-align: center;
     align-items: center;
@@ -49,8 +145,6 @@ html {
 
 .mx-site .lh {
     align-items: center;
-    background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
     -webkit-box-orient: vertical;
     flex-direction: column;
     position: relative;
@@ -209,6 +303,11 @@ strong {
     content: "▾";
     margin-left: 5px;
 }
+.mx-site .ji:before {
+    background: #fff;
+    z-index: 99;
+    position: absolute;
+}
 .mx-site .Yl {
     display: inline-block;
     position: relative;
@@ -225,6 +324,39 @@ strong {
     perspective: 1000px;
     position: relative;
     z-index: 1;
+}
+
+.bk{
+    color:#777;
+    cursor: default;
+    display: block;
+    width: 224px;
+}
+.bk:hover{
+    background: #eaeaea;
+    color:#000;
+}
+.ak{
+    display: inline-block;
+    line-height: 36px;
+    vertical-align: top;
+    font-size: 15px;
+}
+.ck{
+    display: flex;
+    font-weight: 700;
+}
+.mx-site .ck:after{
+    content: "\25BA";
+    font-size: 12px;
+    margin-left: auto;
+}
+.mx-site .Hi:hover{
+    border-top: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .mx-site .jn {
     position: relative;
@@ -504,9 +636,9 @@ button {
     width: 100%;
 }
 .mx-site .Gj:hover{
-    -webkit-box-shadow: 0px 0px 22px 7px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 0px 22px 7px rgba(0,0,0,0.25);
-    box-shadow: 0px 0px 22px 7px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.5);
 }
 .mx-site .Ha {
     margin-top: 32px;
@@ -686,12 +818,11 @@ button {
     flex-flow: row nowrap;
     transition: transform 600ms ease 0s;
 }
-#crl8-homepage-carousel .kAAHWn, #crl8-homepage-carousel-modal .kAAHWn, #crl8-homepage-carousel-uploader .kAAHWn {
+#crl8-homepage-carousel .KAAHWn, #crl8-homepage-carousel-modal .KAAHWn, #crl8-homepage-carousel-uploader .KAAHWn {
     position: relative;
     display: flex;
     transform: translate3d(-1120px, 0px, 0px);
     opacity: 1;
-    flex-direction: row;
     flex-flow: row nowrap;
     transition: transform 600ms ease 0s;
 }
@@ -822,7 +953,12 @@ button {
     -webkit-box-flex: 1;
     flex: 1 0 0;
 }
-
+/* .mx-site .home{
+    display: none;
+}
+#homedecor:hover .home{
+    display: block;
+} */
 .mx-site .bj {
     text-align: left;
 }

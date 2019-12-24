@@ -67,5 +67,36 @@ $(document).ready(function () {
     document.getElementById("list").classList.remove('KAAHWn');
     document.getElementById("list").classList.add('fuUAUh');
   })
+  
 });
+//topnav
+ $(function(){
+   var photo='<div class="photo"><div class="sizes"><div class="Gi"><div class="gb cc qk"><div class="Fb Bc rk"><div><a class="Pe Se Re Vh">Everyday</a></div><div><a class="Pe Se Re Vh">Family</a></div><div><a class="Pe Se Re Vh">Kids</a></div><div><a class="Pe Se Re Vh">Seasonal</a></div><div><a class="Pe Se Re Vh">Holiday</a></div><div><a class="Pe Se Re Vh">Romance</a></div><div><a class="Pe Se Re Vh">Year in Review</a></div></div><div class="Fb Bc rk"><div><a class="Pe Se Re Vh">Wedding Photo Books</a></div><div><a class="Pe Se Re Vh">Wedding Guest Books</a></div><div><a class="Pe Se Re Vh">Travel Photo Books</a></div><div><a class="Pe Se Re Vh">Baby Photo Books</a></div><div><a class="Pe Se Re Vh">Sports</a></div><div><a class="Pe Se Re Vh">Yearbooks</a></div><div><a class="Pe Se Re Vh">Professional / Business</a></div></div><div class="Fb Bc rk"><div><a class="Pe Se Re Vh">Volume Discounts</a></div><div><a class="Pe Se Re Vh">Quick &amp; Easy Books</a></div><div><a class="Pe Se Re Vh Wh">Wedding Collection</a></div><div><a class="Pe Se Re Vh Wh">Designer Collection</a></div><div><a class="Pe Se Re Vh Wh">All</a></div></div></div></div></div></div>';
+   var cards='<div class="cards"><div class="sizes"><div><div class="Gi"><div class="gb cc"><div class="ak"><div id="bk" class="bk ek"><div class="Fb Bc ck">Featured Occasions</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Real Foil</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Holiday</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Wedding</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Baby</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Invitations</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Greeting Cards</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Graduation</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Stationery</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Labels</div></div><div id="bk" class="bk"><div class="Fb Bc ck">Magnets</div></div><div class="Fb Bc"><a href="/cards/create-christmas-holiday-photo" class="Pe Se Re dk">Holiday Collection</a></div><div class="Fb Bc"><a href="/wedding-collection" class="Pe Se Re dk">Wedding Collection</a></div><div class="Fb Bc"><a href="/designers" class="Pe Se Re dk">Designer Collection</a></div><div class="Fb Bc"><a href="/cards/all" class="Pe Se Re dk">View All</a></div></div><div class="gk"><div class="Gb Cc fk"><div><a href="/cards/holiday-photo-cards" class="Pe Se Re Vh">Holiday Photo Cards</a></div><div><a href="/cards/real-foil-holiday-photo-cards" class="Pe Se Re Vh">Real Foil Holiday Photo Cards</a></div><div><a href="/cards/real-foil-save-the-date" class="Pe Se Re Vh">Real Foil Save the Date</a></div><div><a href="/cards/thanksgiving-cards" class="Pe Se Re Vh">Thanksgiving Cards</a></div><div><a href="/cards/new-year-s-cards-invitations" class="Pe Se Re Vh">New Years Cards &amp; Invitations</a></div><div><a href="/cards/real-foil-wedding-invitations" class="Pe Se Re Vh">Real Foil Wedding Invitations</a></div><div><a href="/cards/photo-birth-announcements" class="Pe Se Re Vh">Photo Birth Announcements</a></div><div><a href="/cards/party-invitations" class="Pe Se Re Vh">Party Invitations</a></div><div><a href="/cards/engagement-announcements" class="Pe Se Re Vh">Engagement Announcements</a></div><div><a href="/cards/save-the-date-cards" class="Pe Se Re Vh">Save the Date Cards</a></div><div><a href="/cards/wedding-invitations" class="Pe Se Re Vh">Wedding Invitations</a></div><div><a href="/cards/thank-you-cards" class="Pe Se Re Vh">Thank You Cards</a></div><div><a href="/cards/adoption-announcements" class="Pe Se Re Vh">Adoption Announcements</a></div><div><a href="/cards/birthday-party-invitations" class="Pe Se Re Vh">Birthday Party Invitations</a></div></div></div></div></div></div></div><div class="Yg"><div class="Xg"></div></div></div>';
+   var homedecor='<div class ="home" ><div class ="sizes"><div class="padding"><div><a >Canvas Prints</a></div><div><a >Metal Prints</a></div><div><a >Acrylic Prints</a></div><div><a >Acrylic Blocks</a></div><div><a >Poster Prints</a></div></div></div></div>';
 
+    $("#PB").on('mouseenter',function(){
+    $(this).addClass("ji");
+    $("#PB").append(photo);
+  });
+  $("#PB").on('mouseleave',function(){  
+    $(this).removeClass("ji");
+    $(".photo").remove();
+    });
+    $("#C").on('mouseenter',function(){
+      $(this).addClass("ji");
+      $("#C").append(cards);
+    });
+    $("#C").on('mouseleave',function(){    
+      $(this).removeClass("ji");
+      $(".cards").remove();
+      });
+  $("#homedecor").on('mouseenter',function(){
+    $(this).addClass("ji");
+    $("#homedecor").append(homedecor);
+  });
+  $("#homedecor").on('mouseleave',function(){    
+    $(this).removeClass("ji");
+    $(".home").remove();
+    });
+  });
