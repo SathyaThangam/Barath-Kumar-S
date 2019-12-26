@@ -100,3 +100,45 @@ $(document).ready(function () {
     $(".home").remove();
     });
   });
+
+
+  //DOM manupulation
+  $(function(){
+    var rows = [{
+      name:"PHOTO BOOKS",
+      cost:"$15.99",
+      image:"http://cdn.mixbook.com/apps/site/public/mainPagePhotoBooks-bc68bc2e382d986a65f3.webp"
+    },{
+      name:"PHOTO CARDS",
+      cost:"$0.69",
+      image:"http://cdn.mixbook.com/apps/site/public/mainPageCards-8985bc9c48b7d434cdc8.webp"
+    },{
+      name:"REVIEW PHOTOBOOKS",
+      cost:"$15.99",
+      image:"https://media.mixbook.com/dead_simple_cms/main_page/product_grid_dynamic_item/url.jpg?1576796266"
+    },{
+      name:"CANVAS PRINTS ",
+      cost:"$49.99",
+      image:"http://cdn.mixbook.com/apps/site/public/mainPageCanvasPrints-ce695f9927ac9796c38a.webp"
+    },{
+      name:"MORDERN METAL PRINTS",
+      cost:"$19.99",
+      image:"http://cdn.mixbook.com/apps/site/public/mainPageMetalPrints-2b846bac6349fd77080c.webp"
+    },{
+      name:"MEMORABLE CALENDERS",
+      cost:"$24.99",
+      image:"http://cdn.mixbook.com/apps/site/public/mainPageCalendars-fc36820ad88fb80218ff.webp"
+    }];
+    var html = '<div>';
+    for(var i=0;i<rows.length;i++){
+      html+='<div class="Qa ob Mb kc Fj F"><a href="/photo-books" class="De Ee Fe Gj">';
+      html+='<figcaption class="Qa Mb">';
+      html+='<h2 class="P T W">'+rows[i].name+'</h2>';
+      html+='<div class="Ea Hj">As low as<span class="Go">'+rows[i].cost+'</span></div>';
+      html+='</figcaption><img src="'+rows[i].image+'"class="Ij">';
+      html+='</a></div>';
+    }
+    html+='</div>';
+    $("#DOM").html(html);
+  });
+  

@@ -57,7 +57,7 @@ html {
     z-index: 1;
     position: absolute;
 }
-.Gi{
+.Gi .UB{
     white-space: nowrap;
 }
 .cc{
@@ -89,7 +89,7 @@ html {
 .Se:hover{
     color: #3cadac;
 }
-.Pe{
+.Pe,.ag{
     cursor: pointer;
     text-decoration: none;
 }
@@ -508,16 +508,16 @@ button {
 .mx-site .Ya {
     padding-top: 80px;
 }
-.mx-site .Q {
+.mx-site .Q ,.ad{
     font-size: 48px;
     letter-spacing: .08px;
 }
-.mx-site .P {
+.mx-site .P,.Zc{
     color: #0e2f47;
     line-height: 1.2em;
     text-transform: none;
 }
-.mx-site .P, .mx-site h3 {
+.mx-site .P, .mx-site h3,.Zc ,.mx-site h3{
     font-weight: 300;
 }
 .mx-site .V ,.mx-site .E{
@@ -532,12 +532,12 @@ button {
 .mx-site .Ea{
     margin-top: 8px;
 }
-.mx-site .sd {
+.mx-site .sd,.ne{
     font-size: 20px;
     letter-spacing: .208px;
     line-height: 1.6em;
 }
- .mx-site .rd {
+ .mx-site .rd,.me {
     /* display: block; */
     font-weight: 400;
 } 
@@ -640,7 +640,7 @@ button {
     -moz-box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.5);
 }
-.mx-site .Ha {
+.mx-site .Ha,.ya{
     margin-top: 32px;
 }
 .mx-site .ee {
@@ -738,7 +738,7 @@ button {
 .mx-site .Ia{
     margin-top: 40px;
 }
-.mx-site .Fa{
+.mx-site .Fa,.VB{
     margin-top: 16px;
 }
 .mx-site .wd{
@@ -920,7 +920,7 @@ button {
 .mx-site .Ge, .mx-site .Ee.He {
     color: #0e2f47;
 }
-.mx-site .Ge:hover, .mx-site .Ee.He:hover {
+.mx-site .Ge:hover, .mx-site .Ee.He:hover ,.bg{
     color: #3cadac;
 }
 .mx-site .Rc {
@@ -1002,6 +1002,126 @@ button {
 .nb{
     padding-right: 8px;
     font-size: 14px;
+}
+/* photobook */
+.mx-site .RB {
+    padding: 64px 0 32px;
+    width: 100%;
+}
+.mx-site .YB {
+    margin-top: 32px;
+    position: relative;
+}
+.mx-site .TB, .mx-site .SB {
+    display: -webkit-box;
+    display: flex;
+}
+.mx-site .SB {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-width: 1730px;
+}
+.mx-site .u {
+    max-width: 1240px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.mx-site .s {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.mx-site .TB {
+    -webkit-box-align: left;
+    align-items: left;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 30%;
+}
+.mx-site .WB {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    margin-left: 48px;
+    width: 70%;
+}
+.mx-site .XB {
+    max-height: 352px;
+    max-width: 950px;
+    width: 100%;
+}
+.mx-site .Pd {
+    background-image: linear-gradient(90deg,#f1539a 0,#ff979a 51%,#f1539a);
+    background-size: 200% auto;
+    color: #fff;
+    -webkit-transition: background-position .5s;
+    transition: background-position .5s;
+    will-change: background-position;
+}
+/* red bus */
+.fixer{
+    width: 100%;
+}
+.search-wrapper {
+    padding: 15px 10px 15px 25px;
+    margin-bottom: 20px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 2px 4px 0 hsla(0,0%,71%,.5);
+}
+.fl {
+    float: left;
+}
+.search-wrapper .top-lbl {
+    font-size: 12px;
+    color: #7e7e8c;
+}
+.search-wrapper .textbox {
+    width: 350px;
+    margin: 0 0 .7em;
+    margin-right: 16px;
+}
+.textbox {
+    position: relative;
+    margin: .8em 0;
+}
+.search-wrapper .textbox input {
+    font-size: 17px;
+    color: #3e3e52;
+    font-weight: 700;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-width: 0 0 1px;
+}
+.search-wrapper #switchButton {
+    margin-top: 22px;
+    margin-right: 20px;
+    font-size: 19px;
+    cursor: pointer;
+    margin-left: 4px;
+    transform: rotate(0deg);
+    transition: transform .5s ease-in;
+}
+.search-wrapper .ms-btn {
+    color: #fff;
+    margin-top: 15px;
+    border-radius: 2px;
+    background-color: #d84f55;
+    box-shadow: 0 2px 4px 0 hsla(0,0%,77%,.5);
+    font-weight: 300;
+    padding: 7px 18px 8px;
+    cursor: pointer;
+}
+.search-wrapper .ms-btn:hover{
+    background-color: #E9555D;
+}
+.clearfix{
+    height: 80px;    
 }
 @media (max-width: 1280px)
 {
