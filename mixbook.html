@@ -1106,24 +1106,32 @@
                         <div class="search-section">
                             <div class="parent-textbox  fl">
                                 <div class="top-lbl">FROM</div>
-                                <div class="textbox fl"><input type="text" id="src" class="" data-id="141"
-                                        autocomplete="off" placeholder="Start"></div>
+                                <div class="textbox fl" >
+                                    <input type="text" id="src" class="" data-id="141"
+                                        autocomplete="off" placeholder="Start" name="start" oninput="handleFromSearch();">
+                                <div id="from"></div>
+                                    </div>
                             </div>
                             <div class="parent-textbox  fl">
                                 <div class="top-lbl">To</div>
-                                <div class="textbox fl">
+                                <div class="textbox fl" >
                                     <input type="text" id="dest" class="" placeholder="Destination" data-id="66065"
-                                        autocomplete="off" ></div>
+                                        autocomplete="off" oninput="handleToSearch();">
+                                        <div id="to"></div>
+                                    </div>
                             </div>
                             <div class="textbox fl">
-                                <div class="top-lbl">DATE</div><input type="text" id="onward_cal" readonly="" placeholder="DATE OF JOUNEY">
+                                <div class="top-lbl">DATE</div><input type="date" id="onward_cal" placeholder="DATE OF JOUNEY">
                                 <div id="onward_modify" class="calendar-blk-search calendar-blk-ond hide"></div>
                             </div>
-                            <div class="parent-textbox  fl"><button class=" button ms-btn">SEARCH</button></div>
+                            <div class="parent-textbox  fl"><button class=" button ms-btn" onclick="search();">SEARCH</button></div>
                             <div class="fr" id="mod_cancel"><i class="icon icon-cross"></i></div>
                         </div>
                     </section>
                 </section>
+                <div id="bus">
+
+                </div>
                 <section class="Qa Mb Ff">
                     <div class="ng og Gf">
                         <div class="Qa Mb ea ga If la"><svg class="je Hf">
@@ -1352,6 +1360,7 @@
                     </div>
                 </footer>
             </div>
+        </div>
         </div>
     </div>
 </body>
