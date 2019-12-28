@@ -150,7 +150,7 @@ function handleFromSearch() {
   let srcInput = document.querySelector('#src').value;
   let rem = document.querySelector('#from');
   let child = rem.lastElementChild;
-  while (child) {
+  while(child) {
     rem.removeChild(child);
   }
   let option = '<ul id="autofill" class="autofill">';
@@ -167,26 +167,30 @@ function handleFromSearch() {
 function disappearfrom(id) {
   document.getElementById('src').value = document.getElementById(id).innerHTML;
   srcid = id;
-  let rem = document.querySelector('#from');
-  let child = rem.lastElementChild;
-  if (child) {
-    rem.removeChild(child);
-  }
+  const myNode = document.getElementById("from");
+  myNode.innerHTML = '';
+  // let rem = document.querySelector('#from');
+  // let child = rem.lastElementChild;
+  // while(child) {
+  //   rem.removeChild(child);
+  // }
 }
 function disappearto(id) {
   document.getElementById('dest').value = document.getElementById(id).innerHTML;
   destid= id;
-  let rem = document.querySelector('#to');
-  let child = rem.lastElementChild;
-  if (child) {
-    rem.removeChild(child);
-  }
+  const myNode = document.getElementById("to");
+  myNode.innerHTML = '';
+  // let rem = document.querySelector('#to');
+  // let child = rem.lastElementChild;
+  // while(child) {
+  //   rem.removeChild(child);
+  // }
 }
 function handleToSearch() {
   console.clear();
   let rem = document.querySelector('#to');
   let child = rem.lastElementChild;
-  while (child) {
+  while(child) {
     rem.removeChild(child);
   }
   let destInput = document.querySelector('#dest').value;
@@ -199,15 +203,46 @@ function handleToSearch() {
     $('#to').append(option);
   });
 }
-
+// function date(id){
+//   document.getElementById('dat').value=document.getElementById(id).innerHTML
+// }
 function search() {
+  var dat=document.getElementById('dat').value;
+  var mon;
+        switch(dat.split('-')[1]){
+          case '1' : mon='Jan';
+          break;
+          case '2' : mon='Feb';
+          break;
+          case '3' : mon='Mar';
+          break;
+          case '4' : mon='Apr';
+          break;
+          case '5' : mon='May';
+          break;
+          case '6' : mon='Jun';
+          break;
+          case '7' : mon='Jul';
+          break;
+          case '8' : mon='Aug';
+          break;
+          case '9' : mon='Sep';
+          break;
+          case '10' : mon='Oct';
+          break;
+          case '11' : mon='Nov';
+          break;
+          case '12' : mon='Dec';
+          break;
+        }
+  let date=dat.split('-')[2]+'-'+mon;
   var dest=document.getElementById('dest').value;
   var src=document.getElementById('src').value;
   let header = new Headers()
   header.append("Content-Type", 'application/json')
   let bus='<ul class="bus-items">';
   $.ajax({
-    url: `https://cors-anywhere.herokuapp.com/https://www.redbus.in/search/SearchResults?fromCity=${srcid}&toCity=${destid}&src=${src}&dst=${dest}&DOJ=28-Dec-2019&sectionId=0&groupId=0&limit=0&offset=0&sort=0&sortOrder=0&meta=true&returnSearch=0`,
+    url: `https://cors-anywhere.herokuapp.com/https://www.redbus.in/search/SearchResults?fromCity=${srcid}&toCity=${destid}&src=${src}&dst=${dest}&DOJ=${dat}&sectionId=0&groupId=0&limit=0&offset=0&sort=0&sortOrder=0&meta=true&returnSearch=0`,
     type: 'post',
     headers: {
       'Accept': 'application/json',
@@ -241,7 +276,7 @@ function search() {
         bus+='</div>';
         bus+='<div class="column-five p-right-10 w-10 fl">';
         bus+='<div class="bp-time f-19 d-color disp-Inline">'+at+'</div>';
-        bus+='<div class="next-day-dp-lbl m-top-16">27-Dec</div>';
+        bus+='<div class="next-day-dp-lbl m-top-16">'+date+'</div>';
         bus+='<div class="bp-loc l-color w-wrap f-12 m-top-8" title="'+data.inv[i].StdDp+'">'+data.inv[i].StdDp+'</div>';
         bus+='</div>';
         bus+='<div class="column-six p-right-10 w-10 fl">';

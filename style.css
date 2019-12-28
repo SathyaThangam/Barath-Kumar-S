@@ -1145,7 +1145,7 @@ button {
 
 .row-sec {
     margin-top: 20px;
-    height: 140px;
+    height: 137px;
     border: 1px solid #ddd;
     padding: 10px 0 0;
 }
@@ -1256,10 +1256,13 @@ button {
     margin-top: 30px;
 }
 .bus-items{
-    width:-webkit-fill-available;
+    margin-left: 5%;
+    width: 90%;
     margin-bottom: 10px;
 }
-
+#bus{
+    width: 100%;
+}
 .button:hover{
     background-color: #E9555D;
 }
