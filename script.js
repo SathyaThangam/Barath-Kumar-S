@@ -148,11 +148,8 @@ var srcid,destid;
 function handleFromSearch() {
   console.clear();
   let srcInput = document.querySelector('#src').value;
-  let rem = document.querySelector('#from');
-  let child = rem.lastElementChild;
-  while(child) {
-    rem.removeChild(child);
-  }
+  const myNode = document.getElementById("from");
+  myNode.innerHTML = '';
   let option = '<ul id="autofill" class="autofill">';
   $.getJSON(`https://www.redbus.in/Home/SolarSearch?search=${srcInput}`, function (data) {
     for (i = 0; i < data.response.docs.length; i++) {
@@ -169,30 +166,17 @@ function disappearfrom(id) {
   srcid = id;
   const myNode = document.getElementById("from");
   myNode.innerHTML = '';
-  // let rem = document.querySelector('#from');
-  // let child = rem.lastElementChild;
-  // while(child) {
-  //   rem.removeChild(child);
-  // }
 }
 function disappearto(id) {
   document.getElementById('dest').value = document.getElementById(id).innerHTML;
   destid= id;
   const myNode = document.getElementById("to");
   myNode.innerHTML = '';
-  // let rem = document.querySelector('#to');
-  // let child = rem.lastElementChild;
-  // while(child) {
-  //   rem.removeChild(child);
-  // }
 }
 function handleToSearch() {
   console.clear();
-  let rem = document.querySelector('#to');
-  let child = rem.lastElementChild;
-  while(child) {
-    rem.removeChild(child);
-  }
+  const myNode = document.getElementById("to");
+  myNode.innerHTML = '';  
   let destInput = document.querySelector('#dest').value;
   let option = '<ul id="autofill" class="autofill">';
   $.getJSON(`https://www.redbus.in/Home/SolarSearch?search=${destInput}`, function (data) {
@@ -203,10 +187,14 @@ function handleToSearch() {
     $('#to').append(option);
   });
 }
-// function date(id){
-//   document.getElementById('dat').value=document.getElementById(id).innerHTML
-// }
+function date(){
+  var d = new Date();
+  var strDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+  $('#dat').attr({"min":strDate});
+}
 function search() {
+  const myNode = document.getElementById("bus");
+  myNode.innerHTML = '';
   var dat=document.getElementById('dat').value;
   var mon;
         switch(dat.split('-')[1]){
