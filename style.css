@@ -1122,19 +1122,6 @@ button {
     transform: rotate(0deg);
     transition: transform .5s ease-in;
 }
-/* .search-wrapper .ms-btn {
-    color: #fff;
-    margin-top: 15px;
-    border-radius: 2px;
-    background-color: #d84f55;
-    box-shadow: 0 2px 4px 0 hsla(0,0%,77%,.5);
-    font-weight: 300;
-    padding: 7px 18px 8px;
-    cursor: pointer;
-} */
-/* .search-wrapper .ms-btn:hover{
-    background-color: #E9555D;
-} */
 .clearfix{
     height: 80px;    
 }
@@ -1142,7 +1129,7 @@ button {
     box-shadow: 0 16px 30px 1px rgba(0,0,0,.1);
     transition: 1s;
 }
-
+button:focus {outline:0;}
 .row-sec {
     margin-top: 20px;
     height: 137px;
@@ -1318,6 +1305,65 @@ ul.autofill li{
     width: 225px;
     margin-left: -1px;
 }
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.modal-body{
+    height: 140px;
+}
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: transparent;
+  }
+  .close:hover,.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+  .modal-footer {
+    padding: 2px 16px;
+    color: white;
+  }
+  .modal button{
+      width: 90px;
+      height: 30px;
+      background-color: #3cadac;
+  }
+  .modal input{
+      height: 30px;
+      border: 1px solid #3cadac;
+      width: 500px;
+  }
+  .input-field{
+    margin: 20px;
+  }
+  .error{
+      color: red;
+      font-size: small;
+  }
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
 @media (max-width: 1280px)
 {
     .mx-site .R,.mx-site .ng{

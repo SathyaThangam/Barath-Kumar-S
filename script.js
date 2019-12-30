@@ -291,7 +291,48 @@ function search() {
       $('#bus').append(bus);
         console.log(data.inv);
     }
-});
+})
 }
+$(function(){
+  var btns = document.getElementById("btn-s");
+  var btnl = document.getElementById("btn-l");
+  var btna = document.getElementById("btn-a");
+  var modals= document.getElementById("modal-signup");
+  var modall= document.getElementById("modal-login");
+  var modala= document.getElementById("modal-account");
+  var spans = document.getElementById("close-s");
+  var spanl = document.getElementById("close-l");
+  var spana = document.getElementById("close-a");
+  var loggedout=document.querySelectorAll(".logged-out");
+  var loggedin=document.querySelectorAll(".logged-in");
 
+  // const setupUi=(user)=>
+  // {
+  //   if(user){
+  //     loggedin.forEach(item=> item.style.display = 'block'); 
+  //     loggedout.forEach(item=> item.style.display = 'none');
+  //   }else{
+  //     loggedin.forEach(item=> item.style.display = 'none'); 
+  //     loggedout.forEach(item=> item.style.display = 'block');
+  //   }
+  // }
+  btns.onclick = function() {
+    modals.style.display = "block";
+  }
+  btnl.onclick = function() {
+    modall.style.display = "block";
+  }
+  btna.onclick = function() {
+    modala.style.display = "block";
+  }
+  spans.onclick = function() {
+    modals.style.display = "none";
+  }
+  spanl.onclick = function() {
+    modall.style.display = "none";
+  }
+  spana.onclick = function() {
+    modala.style.display = "none";
+  }
+})
 

@@ -12,6 +12,7 @@
     <link rel=“stylesheet” href=“https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css”></i>
     <script src="js/jquery-ui-datepicker.min.js"></script>
     <script src="script.js"></script>
+    <script src="auth.js"></script>
 </head>
 
 <body>
@@ -32,13 +33,69 @@
                             </svg></a>
                         <div class="sh">
                             <div class="Lk">
-                                <div class="Mk Tk"><a href="/account/signup" class="eg fg ng gg Ok" rel="nofollow"
-                                        style="font-size:15px; font-weight:700">Sign
-                                        Up</a></div>
-                                <div class="Mk"><a href="/account/login" class="eg hg gg Ok" rel="nofollow"
-                                        style="font-size:15px; font-weight:100">Log In</a>
+                                <button type="button" id="btn-s" class="Mk Tk logged-out" ><a class="eg fg ng gg Ok" rel="nofollow"
+                                        style="font-size:15px; font-weight:700 " data-target="modal-signup">Sign Up</a></button>
+                                <div class="Mk logged-out" id="btn-l"><a class="eg hg gg Ok" rel="nofollow" 
+                                        style="font-size:15px; font-weight:100" data-target="modal-login">Log In</a>
                                 </div>
-                                <div class="Mk"><a href="/help" class="eg hg gg Ok" rel="nofollow"
+                                <div class="Mk Tk logged-in" id="btn-a"><a class="eg fg ng gg Ok" rel="nofollow"
+                                    style="font-size:15px; font-weight:700 " data-target="modal-signup">Account</a></div>
+                            <div class="Mk logged-in"><a class="eg hg gg Ok" rel="nofollow" 
+                                    style="font-size:15px; font-weight:100" id="logout">Log Out</a>
+                            </div>
+                            <!-- modal signup -->
+                <div id="modal-signup" class="modal">
+                    <div class="modal-content">
+                        <h4>Sign Up</h4>
+                        <button class="close" id="close-s">&times;</button>
+                        <form id="signup-form" class="modal-body">
+                            
+                            <div class="input-field">
+                                <input type="email" id="signup-email" required/>
+                                <label for="signup-email">Enter Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="signup-password" required/>
+                                <label for="signup-password">Choose your Password</label>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" type="submit">Sign Up</button>
+                            </div>
+                            <p class="error"></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- modal-login -->
+                <div id="modal-login" class="modal">
+                    <div class="modal-content">
+                        <h4>Log In</h4>
+                        <button class="close" id="close-l">&times;</button>
+                        <form id="login-form" class="modal-body">
+                            <div class="input-field">
+                                <input type="email" id="login-email" required/>
+                                <label for="login-email">Enter Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" id="login-password" required/>
+                                <label for="login-password">Choose your Password</label>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btns" type="submit">Log In</button>
+                                <p class="error"></p>
+                            </div>
+                            <p class="error"></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- modal-account -->
+                <div id="modal-account" class="modal">
+                    <div class="modal-content">
+                        <h4>Account</h4>
+                        <button class="close" id="close-a">&times;</button>
+                        <div class="account-details"></div>
+                    </div>
+                </div>
+                                <div class="Mk logged-in"><a href="/help" class="eg hg gg Ok" rel="nofollow"
                                         style="font-size:15px; font-weight:100">Help</a></div>
                             </div>
                             <nav class="Xl">
@@ -74,8 +131,9 @@
                                         </svg></span></div>
                             </nav>
                         </div>
-                    </div>
+                    </div>   
                 </header>
+                
                 <section class="i">
                     <a href="/#products" class="ke" title="offer">
                         <span class="ka">100% Happiness Guaranteed</span>
@@ -260,7 +318,7 @@
                                                                             data-crl8-item-id="ae5d2f50-cd92-47fc-be00-4b97bd405e2d"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @bonniebonsall's instagram image of Colorful Merry"
+                                                                                    aria-label="Open detail: @bonniebonsall's instagram image of Colorful Merry"
                                                                                     tabindex="0"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -289,7 +347,7 @@
                                                                             data-crl8-item-id="c360b5a1-b26a-49a5-8fe6-e18400e39a71"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram image of Merry Everything by The House that Lars Built"
+                                                                                    aria-label="Open detail: @mixbook's instagram image of Merry Everything by The House that Lars Built"
                                                                                     tabindex="0"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -318,7 +376,7 @@
                                                                             data-crl8-item-id="baef4088-da27-4139-b6ee-5de1960b7a71"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @laurenchlebus's instagram image of Rainbow Travel Scrapbook By The House that Lars Built Photo⁠..."
+                                                                                    aria-label="Open detail: @laurenchlebus's instagram image of Rainbow Travel Scrapbook By The House that Lars Built Photo⁠..."
                                                                                     tabindex="0"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -347,7 +405,7 @@
                                                                             data-crl8-item-id="5fa58867-1dad-44e4-b31f-3d6f5bc5bfbb"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @aubreymariea's instagram image of Modern Watercolor Happy Holidays"
+                                                                                    aria-label="Open detail: @aubreymariea's instagram image of Modern Watercolor Happy Holidays"
                                                                                     tabindex="0"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -376,7 +434,7 @@
                                                                             data-crl8-item-id="eb9adf65-7aca-4ee9-8d4b-3805b762ad73"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of It's a Wonderful Life Glitter"
+                                                                                    aria-label="Open detail: uploaded image of It's a Wonderful Life Glitter"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -405,7 +463,7 @@
                                                                             data-crl8-item-id="0b011dec-2f9b-4430-b74c-2d63bba05e5d"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @organizedmamas's instagram image of Canvas Print, 8 x 10"
+                                                                                    aria-label="Open detail: @organizedmamas's instagram image of Canvas Print, 8 x 10"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -434,7 +492,7 @@
                                                                             data-crl8-item-id="46b4ffdc-0ff5-4718-aafd-ec01f9fea841"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of It's a Wonderful Life Glitter"
+                                                                                    aria-label="Open detail : uploaded image of It's a Wonderful Life Glitter"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -463,7 +521,7 @@
                                                                             data-crl8-item-id="bcb11018-d6f2-4d70-b73b-1367dc35d078"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @ledgerandmajor's instagram image of Merriest Christmas Script"
+                                                                                    aria-label="Open detail : @ledgerandmajor's instagram image of Merriest Christmas Script"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -492,7 +550,7 @@
                                                                             data-crl8-item-id="3c03803c-50b8-4a61-9f78-48d2d5321fda"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @amanda_smith's instagram image of Merry Christmas Collage by Alli K Design"
+                                                                                    aria-label="Open detail : @amanda_smith's instagram image of Merry Christmas Collage by Alli K Design"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -521,7 +579,7 @@
                                                                             data-crl8-item-id="58e6df33-8c4a-478d-b3ec-7ff49dcd0df7"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @ohjoyco's instagram image of Ombre Photo Journal by Oh Joy! Photo Book, Color Block Photo Journ⁠..."
+                                                                                    aria-label="Open detail : @ohjoyco's instagram image of Ombre Photo Journal by Oh Joy! Photo Book, Color Block Photo Journ⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -550,7 +608,7 @@
                                                                             data-crl8-item-id="4c89d653-557c-4b0f-8170-51831d3b2145"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Bold Floral Blooms by Jess Phoenix Photo Book"
+                                                                                    aria-label="Open detail : uploaded image of Bold Floral Blooms by Jess Phoenix Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -579,7 +637,7 @@
                                                                             data-crl8-item-id="1d09abc3-7ac8-458f-980a-b387f1c2685d"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of It's a Wonderful Life by Letters by Shells"
+                                                                                    aria-label="Open detail : uploaded image of It's a Wonderful Life by Letters by Shells"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -608,7 +666,7 @@
                                                                             data-crl8-item-id="121885e8-dc8d-43f3-8978-54a9bc77fcb3"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @kyler_sandiego's instagram image: Do you need an idea for a holiday gift? 🎁 We teamed up with⁠..."
+                                                                                    aria-label="Open detail : @kyler_sandiego's instagram image: Do you need an idea for a holiday gift? 🎁 We teamed up with⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -637,7 +695,7 @@
                                                                             data-crl8-item-id="c059c9fe-dffe-42cd-b03b-9ef778b3785e"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @noesdieta's instagram image of Merriest Christmas Script, Hand-painted Christmas, Acrylic Print⁠..."
+                                                                                    aria-label="Open detail : @noesdieta's instagram image of Merriest Christmas Script, Hand-painted Christmas, Acrylic Print⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -666,7 +724,7 @@
                                                                             data-crl8-item-id="b414d2d1-954e-40ab-b67e-d4cd1c61f573"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @our.ollie's instagram image of White Portfolio Photo Calendar"
+                                                                                    aria-label="Open detail : @our.ollie's instagram image of White Portfolio Photo Calendar"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -695,7 +753,7 @@
                                                                             data-crl8-item-id="3243c773-bd5a-441a-990c-1dcafc65373c"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image: Tami on Instagram: “❤️🤰🏾📸We love our pictures so much, we had to turn it into⁠..."
+                                                                                    aria-label="Open detail : uploaded image: Tami on Instagram: “❤️🤰🏾📸We love our pictures so much, we had to turn it into⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -724,7 +782,7 @@
                                                                             data-crl8-item-id="3705649a-0075-4545-a299-4f64f3fab56a"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram image of Holiday Stripes by Oh Joy!, Holiday Confetti Frame by Oh Joy!, Hol⁠..."
+                                                                                    aria-label="Open detail : @mixbook's instagram image of Holiday Stripes by Oh Joy!, Holiday Confetti Frame by Oh Joy!, Hol⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -753,7 +811,7 @@
                                                                             data-crl8-item-id="63b25dca-3350-4e6f-9c41-50dce2dc0b83"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Amazing Day Children's Book by Hello!Lucky Photo Book"
+                                                                                    aria-label="Open detail : uploaded image of Amazing Day Children's Book by Hello!Lucky Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -782,7 +840,7 @@
                                                                             data-crl8-item-id="5e876907-81fd-4adb-9136-e6b2535ce1b8"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram image of A Partridge in a Pear Tree by Lily &amp; Val, Merry Berries by Lily &amp;⁠..."
+                                                                                    aria-label="Open detail : @mixbook's instagram image of A Partridge in a Pear Tree by Lily &amp; Val, Merry Berries by Lily &amp;⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -811,7 +869,7 @@
                                                                             data-crl8-item-id="c87e923d-7319-4e1b-af30-cea12bb83155"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Warm Wishes by Lake Erie Design Co, Foil Folk Floral by Lake Erie Design Co, M⁠..."
+                                                                                    aria-label="Open detail : uploaded image of Warm Wishes by Lake Erie Design Co, Foil Folk Floral by Lake Erie Design Co, M⁠..."
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -840,7 +898,7 @@
                                                                             data-crl8-item-id="ae066558-ea1a-45ed-a3a3-85f263106571"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Illustrated Dog Calendar Photo Calendar"
+                                                                                    aria-label="Open detail : uploaded image of Illustrated Dog Calendar Photo Calendar"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -869,7 +927,7 @@
                                                                             data-crl8-item-id="7bfb0a3a-707a-4d01-8b4f-8a45e2cb96b3"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Abstract Calendar by The Pigeon Letters Photo Calendar"
+                                                                                    aria-label="Open detail : uploaded image of Abstract Calendar by The Pigeon Letters Photo Calendar"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -898,7 +956,7 @@
                                                                             data-crl8-item-id="64d0c005-d9b1-4f17-a77a-cc87e3997e66"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Custom Recipe Book by Magnolia Bakery Photo Book"
+                                                                                    aria-label="Open detail : uploaded image of Custom Recipe Book by Magnolia Bakery Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -915,7 +973,7 @@
                                                                             data-crl8-item-id="b6aef765-6cd6-4804-966d-789c120c741e"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram image of Abstract Year in Review Photo Book"
+                                                                                    aria-label="Open detail : @mixbook's instagram image of Abstract Year in Review Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -932,7 +990,7 @@
                                                                             data-crl8-item-id="ca1ad236-b454-4a8a-87cc-9c63560a0e0a"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Abstract Year in Review"
+                                                                                    aria-label="Open detail : uploaded image of Abstract Year in Review"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -949,7 +1007,7 @@
                                                                             data-crl8-item-id="f7616ce2-48ff-4896-b8c0-af361cc3f991"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram video of Patterned Calendar by Molly Hatch Photo Calendar"
+                                                                                    aria-label="Open detail : @mixbook's instagram video of Patterned Calendar by Molly Hatch Photo Calendar"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -966,7 +1024,7 @@
                                                                             data-crl8-item-id="c3fcaddd-0b79-45ab-b4e5-995616f977ac"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @jenny_b_photography_'s instagram image of Boho Chic Wedding Photo Book"
+                                                                                    aria-label="Open detail mdal: @jenny_b_photography_'s instagram image of Boho Chic Wedding Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -983,7 +1041,7 @@
                                                                             data-crl8-item-id="ace80abe-b92e-4067-a68b-7f1c6a8f20e9"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram image of Happy Halloween by Black Lamb Studio Photo Book"
+                                                                                    aria-label="Open detail : @mixbook's instagram image of Happy Halloween by Black Lamb Studio Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -1000,7 +1058,7 @@
                                                                             data-crl8-item-id="7fa1bb10-6478-4cf8-bde5-8b39afac2048"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: @mixbook's instagram video of Amazing Day Children's Book by Hello!Lucky Photo Book"
+                                                                                    aria-label="Open detail : @mixbook's instagram video of Amazing Day Children's Book by Hello!Lucky Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -1017,7 +1075,7 @@
                                                                             data-crl8-item-id="817946c1-90cb-4904-bcf7-700c1aa329e6"
                                                                             role="listitem">
                                                                             <div><button type="button"
-                                                                                    aria-label="Open detail modal: uploaded image of Rainbow Birthday Book by Ann Kelle Photo Book"
+                                                                                    aria-label="Open detail : uploaded image of Rainbow Birthday Book by Ann Kelle Photo Book"
                                                                                     tabindex="-1"
                                                                                     class="qxyt6u-0 sc-5knuh5-0 hjXCeW">
                                                                                     <div class="sc-7nzl84-1 ffWAsH">
@@ -1216,7 +1274,7 @@
                                                     </svg>
                                                 </svg>Refer-A-Friend and get $20!</span>
                                             <script
-                                                type="extole/widget">{"params":{},"zone":"footer","reference_element":"#extole-footer"}</script>
+                                                type="extole/widget">{"params":{},"zone":"footer","reference_element":"#extole-footer"}</script></script>
                                         </div>
                                     </div>
                                 </div>
@@ -1364,6 +1422,25 @@
         </div>
         </div>
     </div>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZ9EaPWPVHeL-u5LToNFXNOOG9V-jXQj8",
+    authDomain: "authentication-bd4f9.firebaseapp.com",
+    databaseURL: "https://authentication-bd4f9.firebaseio.com",
+    projectId: "authentication-bd4f9",
+    storageBucket: "authentication-bd4f9.appspot.com",
+    messagingSenderId: "779451095893",
+    appId: "1:779451095893:web:3976a7bb1d3ce7a537eddc",
+    measurementId: "G-JDH1YDYWB8"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  const auth=firebase.auth();
+  const db=firebase.firestore();   
+</script>
 </body>
 
 </html>
