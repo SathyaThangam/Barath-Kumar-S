@@ -1,0 +1,100 @@
+.navbar{
+  background-color: #fafafa;
+  height: 50px;
+  border-top: 3px solid orange;
+  border-bottom: 1px solid #ccc;
+}
+.content{
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+}
+.logo-container{
+  height: 50px;
+}
+#logo{
+  height: 50px;
+}
+.content ol{
+  list-style: none;
+  display: flex;
+}
+.options li{
+  padding-right:15px;
+  padding-left: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #999;
+}
+.options li:hover{
+  color: #000;
+  background-color: #eee;
+  border-radius: 1rem;
+}
+.searchbar{
+  height: 40px;
+  margin:5px;
+  width: 30rem;
+}
+.searchbar input{
+  height: 85%;
+  width: 100%;
+}
+.reg-container{
+  margin: 0;
+}
+.reg-container li{
+  height: fit-content;
+  margin-top: 5px;
+  padding:10px;
+  margin-right:20px ;
+  border-radius: 5px;
+  background-color: lightblue;
+  color: #2d88d1;
+  cursor: pointer;
+  border: 1px solid blue;
+}
+.container{
+  padding:20px;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+.top{
+  display:inline-flex;
+}
+.top h1{
+  margin-right: 600px;
+}
+.ques-btn{
+  height: 50px;
+  color: #2d88d1;
+  border:1px solid blue;
+  border-radius: 1rem;
+  background-color: lightskyblue;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
+}
+.ques-btn:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+.ques-btn:hover{
+  background-color: #2d90d1;
+  color: #fafafa;
+}
+.ques-btn:focus{
+  outline: none;
+}
+.qa-container{
+  padding: 20px;
+}
+.question h2{
+  color: #2d88d1;
+}
+.question{
+  border-bottom: 1px solid #eee;
+}
+#ans-data{
+  font-size: 10px;
+  font-weight: 300;
+}

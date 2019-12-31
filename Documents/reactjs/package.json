@@ -1,0 +1,17 @@
+{
+  "name": "reactjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bk",
+  "license": "MIT",
+  "dependencies": {
+    "create-react-app": "^3.3.0",
+    "funding": "^1.0.9",
+    "react": "^16.12.0",
+    "react-router-dom": "^5.1.2"
+  }
+}
