@@ -8,7 +8,8 @@ const modal = (props) => {
             <div className="modal-wrapper"
                 style={{
                     transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
-                    opacity: props.show ? '1' : '0'
+                    display: props.show ? 'block' : 'none',
+                    zIndex: 99
                 }}>
                 <div className="modal-header">
                     <h3>Write Your Text here</h3>

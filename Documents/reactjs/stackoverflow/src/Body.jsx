@@ -1,17 +1,47 @@
 import React from 'react';
 import './App.css';
+import Down from './down.svg'
+import Up from './up.svg'
 import Modal from './component/Modal';
+import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
 class Body extends React.Component {
 
     constructor() {
         super();
-
+        this.modules = {
+            toolbar: [
+              [{ 'font': [] }],
+              [{ 'size': ['small', false, 'large', 'huge'] }],
+              ['bold', 'italic', 'underline'],
+              [{'list': 'ordered'}, {'list': 'bullet'}],
+              [{ 'align': [] }],
+              [{ 'color': [] }, { 'background': [] }],
+              ['clean'],
+              [{'blockquote': false}],
+              [{'code-block': false}],
+              [{'image': false}]
+              
+            ]
+        }
+        this.formats = [
+            'font',
+            'size',
+            'bold', 'italic', 'underline',
+            'list', 'bullet',
+            'align',
+            'color', 'background',
+            'blockquote',
+            'code-block',
+            'image'
+          ]
         this.state = {
 
             ques: [{
                 name: "hii?",
                 answer: [{
-                    name: "Yes"
+                    name: "yes",
+                    votes: "0"
                 }]
             }],
             postVal: "",
@@ -21,13 +51,13 @@ class Body extends React.Component {
             index: ""
         }
         this.appendans = this.appendans.bind(this);
-        this.handleans = this.handleans.bind(this);
         this.appendData = this.appendData.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleCh = this.handleCh.bind(this)
     }
     appendans = () => {
         let {ques} = this.state;
-        ques[this.state.index].answer.push({name : this.state.ansVal })
+        ques[this.state.index].answer.push({name : this.state.ansVal, votes: "0" })
         console.log(ques);
         this.setState({
             ques:ques,
@@ -45,19 +75,33 @@ class Body extends React.Component {
             postVal: ""
         })
     }
-
+    upvote = (index,i) =>{
+        let{ ques } = this.state
+        ques[index].answer[i].votes++
+        this.setState({
+            ques:ques,
+        })
+    }
+    downvote = (index,i) =>{
+        let{ ques } = this.state
+        if(ques[index].answer[i].votes>0)
+        ques[index].answer[i].votes--
+        this.setState({
+            ques:ques,  
+        })
+    }
     handleChange(e) {
         let getTextAreaValue = e.target.value;
         this.setState({
             postVal: getTextAreaValue
         });
     }
-    handleans(e) {
-        let getTextAreaValue = e.target.value;
+    handleCh(e) {
+        let getTextAreaValue = e;
         this.setState({
             ansVal: getTextAreaValue
         });
-    }
+      }
 
     renderQuestions = () => {
         return (
@@ -71,14 +115,19 @@ class Body extends React.Component {
                                 <div>
                                     {data.answer.map((ans,i) => {
                                         return (
-                                            <div>
-                                                {<div>Answer: {ans.name}</div>}
+                                            <div className="answer">
+                                            <div className="votes">
+                                                <button id="vote" onClick={()=>this.upvote(index,i)}><img id="up" src={Up}></img></button>
+                                                <p>{ans.votes}</p>
+                                                <button id="vote" onClick={()=>this.downvote(index,i)}><img id="down" src={Down}></img></button>
+                                            </div>
+                                        <div id="answer" dangerouslySetInnerHTML={{__html:ans.name}}></div>
                                             </div>
                                         )
                                     })}
                                 </div> : "no answer"}
+                                <button type="submit" className="ans-btn" onClick={() => this.setState({ isShowing2: true, isShowing1: false,index : index })}>Add Answer</button>
                         </div>
-                        <button type="submit" onClick={() => this.setState({ isShowing2: true, isShowing1: false,index : index })}>Add Answer</button>
                         </div>
                     )
                 })}
@@ -90,6 +139,21 @@ class Body extends React.Component {
         let { ques } = this.state
         return (
             <div>
+                <Modal
+                    className="modal"
+                    show={this.state.isShowing1}
+                    close={() => this.setState({ isShowing1: false, isShowing2: false, postVal : "" })}
+                    submit={this.appendData}>
+                    <textarea id="question" type="text" value={this.state.postVal} onChange={this.handleChange}></textarea>
+                </Modal>
+                <Modal
+                    className="modal"
+                    show={this.state.isShowing2}
+                    close={() => this.setState({ isShowing1: false, isShowing2: false, ansVal : "" })}
+                    submit={this.appendans}>
+                    <ReactQuill value={this.state.ansVal}   formats={this.formats} modules={this.modules}
+                  onChange={this.handleCh} />
+                </Modal>
                 <div className="container">
                     <div className="top">
                         <h1>All Questions</h1>
@@ -99,21 +163,7 @@ class Body extends React.Component {
                         {this.renderQuestions()}
                     </div>
                 </div>
-                {this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null}
-                <Modal
-                    className="modal"
-                    show={this.state.isShowing1}
-                    close={() => this.setState({ isShowing1: false, isShowing2: false })}
-                    submit={this.appendData}>
-                    <textarea id="question" type="text" value={this.state.postVal} onChange={this.handleChange}></textarea>
-                </Modal>
-                <Modal
-                    className="modal"
-                    show={this.state.isShowing2}
-                    close={() => this.setState({ isShowing1: false, isShowing2: false })}
-                    submit={this.appendans}>
-                    <textarea id="answer" type="text" value={this.state.ansVal} onChange={this.handleans}></textarea>
-                </Modal>
+                
             </div>
         );
     }
