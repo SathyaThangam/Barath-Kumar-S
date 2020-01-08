@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import 'material-design-icons'
-
+import axios from 'axios'
 
 class Watchlist extends React.Component{
     
@@ -13,9 +13,14 @@ class Watchlist extends React.Component{
     }
 
     watchclick=(mov)=>{
-        mov["watchcolor"] = "white";
-        const removewatch={type : 'DELETE_WATCHLIST' , watchlist : mov};
-        this.props.dispatch(removewatch)
+        axios.post('http://localhost:8080/watchlist/remove',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                    .then(res => {
+                        const removewatch = { type: 'DELETE_WATCHLIST', watchlist: mov };
+                        this.props.dispatch(removewatch)
+                })
     } 
 
     // componentWillMount=()=>{

@@ -66,7 +66,7 @@ const SignIn= ({history})=> {
     setState({ ...state, password: passwordentered });
   }
   
-  const {currentUser}=useContext(AuthContext);
+  const {currentUser} = useContext(AuthContext);
 
   if(currentUser){
         return<Redirect to="/" />;

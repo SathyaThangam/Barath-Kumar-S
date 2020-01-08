@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import Logo from '../img/Logo.png'
 import Search from '../img/search.svg'
@@ -7,20 +7,25 @@ import app from '../auth/auth.js';
 import './home.css'
 import 'material-design-icons'
 import { connect } from 'react-redux'
+import axios from 'axios';
+import { AuthContext } from '../auth/authDetail';
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         favourites: state.favourites,
         watchlist: state.watchlist,
         cards : state.cards,
+        api:state.api,
     }
 }
 
 class Navbar extends React.Component {
+    static contextType = AuthContext;
+    
     constructor(props) {
         super(props);
         this.state = {
+            user : "",
             error: "Search For Movies",
             search: "",
             cards : [],
@@ -28,23 +33,46 @@ class Navbar extends React.Component {
     }
 
     favclick = (mov) => {
+        console.log(mov);
         let fav = false;
         if (this.props.favourites.length > 0) {
             for (let i = 0; i < this.props.favourites.length; i++)
                 if (this.props.favourites[i].imdbID === mov.imdbID) { fav = true; }
 
             if (!(fav)) {
-                const addfav = { type: 'ADD_FAVOURITE', favourites: mov };
-                this.props.dispatch(addfav);
+                //axios
+                axios.post('http://localhost:8080/favourites/add',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                    .then(res => {
+                        
+                    }) 
+                    const addfav = { type: 'ADD_FAVOURITE', favourites: mov };
+                    this.props.dispatch(addfav); 
             }
             else {
+                //axios
+                axios.post('http://localhost:8080/favourites/remove',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                    .then(res => {
+                        
+                })
                 const removefav = { type: 'DELETE_FAVOURITE', favourites: mov };
                 this.props.dispatch(removefav)
             }
         }
         else {
-            const addfav = { type: 'ADD_FAVOURITE', favourites: mov };
-            this.props.dispatch(addfav);
+            axios.post('http://localhost:8080/favourites/add',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                    .then(res => {
+                        const addfav = { type: 'ADD_FAVOURITE', favourites: mov };
+                        this.props.dispatch(addfav);
+                    })
         }
     }
 
@@ -55,16 +83,38 @@ class Navbar extends React.Component {
                 if (this.props.watchlist[i].imdbID === mov.imdbID) { watch = true }
 
             if (!(watch)) {
-                const addwatch = { type: 'ADD_WATCHLIST', watchlist: mov };
-                this.props.dispatch(addwatch);
+                //axios
+                axios.post('http://localhost:8080/watchlist/add',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                .then(res => {
+                    const addwatch = { type: 'ADD_WATCHLIST', watchlist: mov };
+                    this.props.dispatch(addwatch);
+                })
+                
             } else {
-                const removewatch = { type: 'DELETE_WATCHLIST', watchlist: mov };
-                this.props.dispatch(removewatch);
+                //axios
+                axios.post('http://localhost:8080/watchlist/remove',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                .then(res => {
+                    const removewatch = { type: 'DELETE_WATCHLIST', watchlist: mov };
+                    this.props.dispatch(removewatch);
+                })
+                
             }
         }
         else {
-            const addwatch = { type: 'ADD_WATCHLIST', watchlist: mov };
-            this.props.dispatch(addwatch);
+            axios.post('http://localhost:8080/watchlist/add',{
+                    userid : this.state.user,
+                    movie : mov,
+                })
+                .then(res => {
+                    const addwatch = { type: 'ADD_WATCHLIST', watchlist: mov };
+                    this.props.dispatch(addwatch);
+                })
         }
     }
 
@@ -76,33 +126,36 @@ class Navbar extends React.Component {
                     return result.json();
                 }).then(data => {
                     const Cards = { type: 'CARDS', cards: data.Search };
-                    console.log(Cards);
                     this.props.dispatch(Cards);
-                    this.setState({cards: data.Search});
-                    // let cards = data.Search.map((mov) => {
-                    //     return (
-                    //         <div id="movie-card" style={{ background: `url(${mov.Poster})` }} >
-                    //             <button onClick={() => this.favclick(mov)}><i className={"material-icons icon " + `${this.props.favourites.includes(mov) ? 'red' : 'white'}` } id="fav" title="favorites">favorite</i></button>
-                    //             <button onClick={() => this.watchclick(mov)}><i className="material-icons icon " id="watch" title="watchlist">list</i></button>
-                    //             <div id="info"> 
-                    //                 <div id="title">{mov.Title}</div>
-                    //                 <div id="year">Year : {mov.Year}</div>
-                    //                 <div id="type">Type : {mov.Type}</div>
-                    //             </div>
-                    //         </div >
-                    //     )
-                    // })
-                    // const Cards = { type: 'CARDS', cards: cards };
-                    // this.props.dispatch(Cards);
+                    this.setState({...this.state,cards: data.Search}); 
                 }, [])
-                //.catch(function () {
-                //     alert("Ther is No Search Result Found");
-                // })
         } else {
             alert("Please Enter Something to search");
         }
     }
+    componentDidMount = () =>{
+        const user = this.context.currentUser.uid;
+        this.setState({...this.state, user})
+        if(!this.props.api)
+        {
+            //favourites-fetch
+            axios.post('http://localhost:8080/favourites/show',{userid: user})
+            .then(res =>{
+                const favourites = { type : 'SHOW_FAVOURITE' , favourites : res.data}
+                this.props.dispatch(favourites)
+                // console.log('Favourites are :',res.data)
+            })
+            //watchlist-fetch
+            axios.post('http://localhost:8080/watchlist/show',{userid: user})
+            .then(res =>{
+                const watchlist = { type : 'SHOW_WATCHLIST' , watchlist : res.data}
+                this.props.dispatch(watchlist)
+            })
 
+            const api = { type : 'FETCHED'}
+            this.props.dispatch(api);
+        }
+    }
     searchValue = (e) => {
         var searchval = e.target.value;
         this.setState({ ...this.state, search: searchval })
@@ -144,8 +197,6 @@ class Navbar extends React.Component {
                 <div className="movie-list">
                     {/* {this.state.cards} */}
                     {this.state.cards.map((mov) => {
-                        // debugger;
-                        // console.log(`Favourites ->`, this.props.favourites.includes(mov))
                         return (
                             <div id="movie-card" style={{ background: `url(${mov.Poster})` }} >
                                     <button onClick={() => this.favclick(mov)}><i className={"material-icons icon " + `${isfavourite(mov.imdbID) ? 'red' : 'white'}` } id="fav" title="favorites">favorite</i></button>
@@ -163,7 +214,5 @@ class Navbar extends React.Component {
         )
     }
 }
-
-
 
 export default connect(mapStateToProps)(Navbar);

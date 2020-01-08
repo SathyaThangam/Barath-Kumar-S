@@ -7,14 +7,29 @@
 
 
 const initState = {
+    api : false,
     cards : [],
     favourites : [],
-    watchlist : [],
+    watchlist : [], 
 }
 
 const rootReducer =(state = initState, action )=>{
-    console.log(state)
     switch(action.type){
+        case 'FETCHED' :
+            return{
+                ...state,
+                api : true,
+            }
+        case 'SHOW_FAVOURITE' :
+            return{
+                ...state,
+                favourites : [...state.favourites , ...action.favourites]
+            }
+        case 'SHOW_WATCHLIST' :
+            return{
+                ...state,
+                watchlist : [...state.watchlist , ...action.watchlist]
+            }
         case 'ADD_FAVOURITE' :
             return{
                 ...state,
